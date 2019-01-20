@@ -10,6 +10,7 @@ public class QuotesPrinter {
         FileReader flrd = new FileReader(quotesFile);
         BufferedReader buff = new BufferedReader(flrd);
 
+
         reformat(buff);
 
     }
@@ -23,6 +24,7 @@ public class QuotesPrinter {
             System.out.println(line);
             line = input.readLine();
         }
+
 
     }
 }
