@@ -25,7 +25,8 @@ public class PickManyQuotes {
         try {
           anArray[j] = Integer.parseInt(args[i]);
         } catch (NumberFormatException ok) {
-          return;
+          System.out.println("Not a number.");
+          // return;
         }
 
         j++;
@@ -34,8 +35,8 @@ public class PickManyQuotes {
       reformat(loadQuotes(buff), anArray);
 
     } catch (FileNotFoundException fe) {
-
-      return;
+      System.out.println("File not found.");
+      // return;
     }
   }
 

@@ -11,6 +11,7 @@ public class PickYourQuote {
     }
 
     final String quotesFile = args[0];
+
     int numberQuote = Integer.parseInt(args[1]);
 
     FileReader flrd = new FileReader(quotesFile);
