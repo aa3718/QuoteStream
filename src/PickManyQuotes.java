@@ -14,7 +14,7 @@ public class PickManyQuotes {
     }
 
     final String quotesFile = args[0];
-try {
+
     try {
       FileReader flrd = new FileReader(quotesFile);
       BufferedReader buff = new BufferedReader(flrd);
@@ -25,8 +25,8 @@ try {
         try {
           anArray[j] = Integer.parseInt(args[i]);
         } catch (NumberFormatException ok) {
+
           System.out.println("Not a number.");
-          // return;
         }
 
         j++;
@@ -35,18 +35,14 @@ try {
       reformat(loadQuotes(buff), anArray);
 
     } catch (FileNotFoundException fe) {
+
       System.out.println("File not found.");
-      // return;
-    }
-    } catch (AssertionError er) {
-  System.out.println("Error");
     }
   }
 
   public static void reformat(List<Quote> quotes, int[] choices) {
 
     for (int i = 0; i < choices.length; i++) {
-      System.out.println(choices[i]);
 
       if (choices[i] > quotes.size() || choices[i] < 1) {
         return;
