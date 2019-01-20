@@ -3,35 +3,57 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.FileNotFoundException;
+import java.lang.Exception;
 
 
 public class PickManyQuotes {
 
   public static void main(String[] args) throws Exception {
-
-      final String quotesFile = args[0];
-      FileReader flrd = new FileReader(quotesFile);
-      BufferedReader buff = new BufferedReader(flrd);
+     // assert args.length != 0 ;
+     // assert args.length != 1;
 
       if(args.length == 0 || args.length == 1){
           return;
       }
 
-      int [] anArray = new int[(args.length - 1)];
-      int j = 0;
+      final String quotesFile = args[0];
 
-      for (int i = 1; i < args.length ; i++) {
-        anArray[j] = Integer.parseInt(args[i]);
-        j++;
-      }
+      try {
+          FileReader flrd = new FileReader(quotesFile);
+          BufferedReader buff = new BufferedReader(flrd);
+          int [] anArray = new int[(args.length - 1)];
+          int j = 0;
+
+          for (int i = 1; i < args.length ; i++) {
+              anArray[j] = Integer.parseInt(args[i]);
+              j++;
+          }
 
           reformat(loadQuotes(buff), anArray);
+
+      } catch (FileNotFoundException fe){
+
+          return;
+      }
+
+
+
  }
 
 
   public static void reformat(List<Quote> quotes, int[] choices) {
 
       for (int i = 0; i < choices.length ; i++) {
+System.out.println(choices[i]);
+/*
+try {
+    assert choices[i] <= quotes.size() && choices[i] > 1;
+} catch (AssertionError e) {
+
+return;
+}
+*/
 
           if (choices[i] > quotes.size() || choices[i] < 1) {
             return;
