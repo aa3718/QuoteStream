@@ -7,11 +7,8 @@ public class QuotesPrinter {
     public static void main(String[] args) throws Exception {
 
         final String quotesFile = "Quotes.txt";
-        BufferedReader buff = null;
-        FileReader flrd = null;
-
-        flrd = new FileReader(quotesFile);
-        buff = new BufferedReader(flrd);
+        FileReader flrd = new FileReader(quotesFile);
+        BufferedReader buff = new BufferedReader(flrd);
 
         reformat(buff);
 

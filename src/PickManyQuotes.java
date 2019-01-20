@@ -10,11 +10,8 @@ public class PickManyQuotes {
   public static void main(String[] args) throws Exception {
 
       final String quotesFile = args[0];
-      BufferedReader buff = null;
-      FileReader flrd = null;
-
-      flrd = new FileReader(quotesFile);
-      buff = new BufferedReader(flrd);
+      FileReader flrd = new FileReader(quotesFile);
+      BufferedReader buff = new BufferedReader(flrd);
 
       int [] anArray = new int[(args.length - 1)];
       int j = 0;
@@ -29,7 +26,6 @@ public class PickManyQuotes {
 
 
   public static void reformat(List<Quote> quotes, int[] choices) {
-      System.out.println("here");
 
       for (int i = 0; i < choices.length ; i++) {
           quotes.get(choices[i]).printOut();

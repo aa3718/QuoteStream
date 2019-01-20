@@ -9,20 +9,16 @@ public class PickYourQuote {
         final String quotesFile = args[0];
         int numberQuote = Integer.parseInt(args[1]);
 
-        BufferedReader buff = null;
-        FileReader flrd = null;
-
-        flrd = new FileReader(quotesFile);
-        buff = new BufferedReader(flrd);
+        FileReader flrd = new FileReader(quotesFile);
+        BufferedReader buff = new BufferedReader(flrd);
 
         reformat(numberQuote, buff);
-
     }
 
     public static void reformat(int i, BufferedReader input) throws IOException {
 
         String line = input.readLine();
-        int count = 1;
+        int count = 0;
 
         while (line != null) {
             line = line.replace(";", "\n");
