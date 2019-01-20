@@ -1,16 +1,13 @@
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.io.FileNotFoundException;
-import java.lang.Exception;
 
 public class PickManyQuotes {
 
   public static void main(String[] args) throws Exception {
-    // assert args.length != 0 ;
-    // assert args.length != 1;
 
     if (args.length == 0 || args.length == 1) {
       return;
@@ -41,14 +38,6 @@ public class PickManyQuotes {
 
     for (int i = 0; i < choices.length; i++) {
       System.out.println(choices[i]);
-      /*
-      try {
-          assert choices[i] <= quotes.size() && choices[i] > 1;
-      } catch (AssertionError e) {
-
-      return;
-      }
-      */
 
       if (choices[i] > quotes.size() || choices[i] < 1) {
         return;
