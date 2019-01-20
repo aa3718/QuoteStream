@@ -14,7 +14,7 @@ public class PickManyQuotes {
     }
 
     final String quotesFile = args[0];
-
+try {
     try {
       FileReader flrd = new FileReader(quotesFile);
       BufferedReader buff = new BufferedReader(flrd);
@@ -37,6 +37,9 @@ public class PickManyQuotes {
     } catch (FileNotFoundException fe) {
       System.out.println("File not found.");
       // return;
+    }
+    } catch (AssertionError er) {
+  System.out.println("Error");
     }
   }
 
