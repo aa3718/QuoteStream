@@ -33,9 +33,10 @@ public class QuotesPrinterTest {
 
     String actualOutput = outstream.toString();
 
-    String errorMsg = String.format(
-        "For input \n %s \n the expected output should contain \n %s \n but the output was \n %s",
-        input, expectedOutput, actualOutput);
+    String errorMsg =
+        String.format(
+            "For input \n %s \n the expected output should contain \n %s \n but the output was \n %s",
+            input, expectedOutput, actualOutput);
 
     assertThat(errorMsg, actualOutput, containsString(expectedOutput));
   }
