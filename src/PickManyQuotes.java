@@ -28,7 +28,7 @@ public class PickManyQuotes {
   public static void reformat(List<Quote> quotes, int[] choices) {
 
       for (int i = 0; i < choices.length ; i++) {
-          quotes.get(choices[i]).printOut();
+          quotes.get(choices[i]-1).printOut();
   }
 
   }

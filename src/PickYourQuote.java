@@ -18,7 +18,7 @@ public class PickYourQuote {
     public static void reformat(int i, BufferedReader input) throws IOException {
 
         String line = input.readLine();
-        int count = 0;
+        int count = 1;
 
         while (line != null) {
             line = line.replace(";", "\n");
