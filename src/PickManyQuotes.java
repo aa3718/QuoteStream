@@ -13,6 +13,9 @@ public class PickManyQuotes {
       FileReader flrd = new FileReader(quotesFile);
       BufferedReader buff = new BufferedReader(flrd);
 
+      if(args.length == 0){
+          return;
+      }
       int [] anArray = new int[(args.length - 1)];
       int j = 0;
 
