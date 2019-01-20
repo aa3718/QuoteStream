@@ -44,11 +44,11 @@ public class PickManyQuotes {
 
     for (int i = 0; i < choices.length; i++) {
 
-      if (choices[i] > quotes.size() || choices[i] < 1) {
+      if (choices[i] > quotes.size() || choices[i] < 0) {
         return;
       }
 
-      String wruble = quotes.get(choices[i] - 1).toString();
+      String wruble = quotes.get(choices[i]).toString();
       System.out.println(wruble);
     }
   }
