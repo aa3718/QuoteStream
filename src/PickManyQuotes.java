@@ -33,9 +33,8 @@ public class PickManyQuotes {
 
       for (int i = 0; i < choices.length ; i++) {
 
-          if (choices[i] > quotes.size()) {
-
-          return;
+          if (choices[i] > quotes.size() || choices[i] < 1) {
+            return;
           }
 
           String wruble = quotes.get(choices[i]-1).toString();
