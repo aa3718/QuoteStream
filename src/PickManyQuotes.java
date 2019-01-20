@@ -22,7 +22,12 @@ public class PickManyQuotes {
       int j = 0;
 
       for (int i = 1; i < args.length; i++) {
-        anArray[j] = Integer.parseInt(args[i]);
+        try {
+          anArray[j] = Integer.parseInt(args[i]);
+        } catch (NumberFormatException ok) {
+          return;
+        }
+
         j++;
       }
 
