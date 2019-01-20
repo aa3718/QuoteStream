@@ -6,6 +6,10 @@ public class PickYourQuote {
 
   public static void main(String[] args) throws Exception {
 
+    if (args.length == 0 || args.length == 1) {
+      return;
+    }
+
     final String quotesFile = args[0];
     int numberQuote = Integer.parseInt(args[1]);
 
