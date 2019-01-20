@@ -16,6 +16,7 @@ public class PickManyQuotes {
       if(args.length == 0 || args.length == 1){
           return;
       }
+
       int [] anArray = new int[(args.length - 1)];
       int j = 0;
 
@@ -31,6 +32,12 @@ public class PickManyQuotes {
   public static void reformat(List<Quote> quotes, int[] choices) {
 
       for (int i = 0; i < choices.length ; i++) {
+
+          if (choices[i] > quotes.size()) {
+
+          return;
+          }
+
           String wruble = quotes.get(choices[i]-1).toString();
           System.out.println(wruble);
   }
